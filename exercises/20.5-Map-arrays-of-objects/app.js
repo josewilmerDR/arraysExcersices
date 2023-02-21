@@ -5,9 +5,12 @@ let people = [
 	{ name: 'Dylan', birthDate: new Date(1999,12,14) },
 	{ name: 'Steve', birthDate: new Date(2003,4,24) }
 ];
+let actualDate = new Date(2022,1,1);
+let actualYear = actualDate.getFullYear()
 
 let simplifier = function(person){
-	return person.name;
+	let age = actualYear - person.birthDate.getFullYear();
+	return "Hello, my name is " + person.name + " and I am "+ age + " years old";
 };
 
 console.log(people.map(simplifier));
